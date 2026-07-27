@@ -1,6 +1,6 @@
 import { io } from "socket.io-client";
 
-const socket = io("https://personal-finance-tracker-brdf.onrender.com/api", {
+const socket = io("https://personal-finance-tracker-brdf.onrender.com", {
     transports: ["websocket", "polling"],
     withCredentials: true,
 });

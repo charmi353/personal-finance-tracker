@@ -313,10 +313,13 @@ function Transactions() {
             <strong>Receipt</strong>
 
             <img
-                src={`http://localhost:5000/uploads/${item.receipt}`}
-                alt="Receipt"
-                className="mt-3 rounded-xl border w-full h-56 object-cover"
-            />
+    src={`https://personal-finance-tracker-brdf.onrender.com/uploads/${item.receipt}`}
+    alt="Receipt"
+    className="mt-3 rounded-xl border w-full h-56 object-cover"
+    onError={(e) => {
+        e.target.style.display = "none";
+    }}
+/>
 
         </div>
 
