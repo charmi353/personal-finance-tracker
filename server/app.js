@@ -5,8 +5,10 @@ dotenv.config();
 const app = express();
 app.use(
     cors({
-        origin: "http://localhost:5173",
-        credentials: true
+        origin: ["http://localhost:5173",
+         "https://personal-finance-tracker-xi-two.vercel.app"
+        ],
+         credentials: true
     })
 );
 app.use(express.json());
@@ -24,6 +26,7 @@ const logRoutes = require("./routes/logRoutes");
 const categoryRoutes = require("./routes/categoryRoutes");
 const moderatorRoutes = require("./routes/moderatorRoutes");
 const ticketRoutes = require("./routes/ticketRoutes");
+
 app.use("/api/tickets", ticketRoutes);
 app.use("/api/moderator", moderatorRoutes);
 app.use("/api/auth", authRoutes);
